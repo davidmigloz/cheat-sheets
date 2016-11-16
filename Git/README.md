@@ -1,5 +1,12 @@
 # Git
 
+## Index
+
+- [Feature branches](#feature-branches)
+- [Release branches](#release-branches)
+- [Hotfix branches](#hotfix-branches)
+- [Fix .gitignore](#fix-gitignore)
+
 ![Git model](http://nvie.com/img/git-model@2x.png)
 
 ## Feature branches
@@ -73,5 +80,15 @@ git branch -d hotfix-1.2.1
 > Back-merging the bugfix into the release branch will eventually result in the bugfix being merged into develop too, when the release branch is finished. 
 > (If work in develop immediately requires this bugfix and cannot wait for the release branch to be finished, you may safely merge the bugfix into develop now already as well.)
 
+## Fix .gitignore
+
+```bash
+git commit -m "Changes..."
+git rm -r --cached .
+git add .
+git commit -m "Fixed untracked files"
+```
+
 # References
 - [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
+- [.gitignore not working](http://stackoverflow.com/questions/11451535/gitignore-not-working)
