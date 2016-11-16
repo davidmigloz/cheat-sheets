@@ -7,7 +7,7 @@
 ### Creating a feature branch
 
 ```bash
-$ git checkout -b myfeature develop
+git checkout -b myfeature develop
 ```
 
 ### Incorporating a finished feature on develop
