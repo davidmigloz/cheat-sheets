@@ -99,3 +99,6 @@ Deleted branch hotfix-1.2.1 (was abbe5d6).
 > The one exception to the rule here is that, when a release branch currently exists, the hotfix changes need to be merged into that release branch, instead of develop. 
 > Back-merging the bugfix into the release branch will eventually result in the bugfix being merged into develop too, when the release branch is finished. 
 > (If work in develop immediately requires this bugfix and cannot wait for the release branch to be finished, you may safely merge the bugfix into develop now already as well.)
+
+# References
+- [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
