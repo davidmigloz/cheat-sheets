@@ -1,5 +1,7 @@
 # Git
 
+![Git model](http://nvie.com/img/git-model@2x.png)
+
 ## Feature branches
 
 ### Creating a feature branch
