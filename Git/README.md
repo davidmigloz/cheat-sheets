@@ -6,6 +6,8 @@
 - [Release branches](#release-branches)
 - [Hotfix branches](#hotfix-branches)
 - [Fix .gitignore](#fix-gitignore)
+- [Undo commit](#undu-commit)
+- [Edit last commit message](#edit-last-commit-message)
 
 ![Git model](http://nvie.com/img/git-model@2x.png)
 
@@ -89,6 +91,92 @@ git add .
 git commit -m "Fixed untracked files"
 ```
 
+## Undo commit
+
+### Undo the commit but keep your changes
+
+```bash
+git commit -m "Something terribly misguided" 
+git reset HEAD~1
+<< edit files as necessary >>
+git add -A
+git commit -m "The good commit" 
+```
+
+Graphically, where C is your HEAD and (F) is the state of your files:
+
+```bash
+   (F)          (F)
+A-B-C    ==> A-B-C
+    ↑          ↑
+  master     master
+```
+
+### Undo the commit and remove your changes
+
+```bash
+git commit -m "Something terribly misguided" 
+git reset --hard HEAD~1
+<< edit files as necessary >>
+git add -A
+git commit -m "The good commit" 
+```
+
+Graphically:
+
+```bash
+   (F)        (F)
+A-B-C    ==> A-B
+    ↑          ↑
+  master     master
+```
+
+## Edit last commit message
+
+### Commit has not been pushed online
+
+```bash
+git commit -m "Bad commit message"
+git commit --amend
+<< edit message >>
+```
+
+Or directly:
+
+```bash
+git commit -m "Bad commit message"
+git commit --amend -m "New commit message"
+```
+
+Or using interactive rebase:
+
+```bash
+# X is the number of commits to the last commit you want to be able to edit
+git rebase -i HEAD~X
+<< replace pick with reword before each commit message you want to change >>
+<< in each resulting commit file, type the new commit message >>
+```
+
+Make sure you don't have any working copy changes staged before doing this or they will get committed too. 
+If so, to unstage any changes you've made since you can do `git reset`.
+
+### Commit has been pushed online
+
+You need to force push the commit:
+
+```bash
+git commit -m "Bad commit message"
+git commit --amend -m "New commit message"
+git push --force example-branch
+```
+
+Warning: force-pushing will overwrite the remote branch with the state of your local one.
+Warning: be cautious about amending commits that you have already shared with other people.
+
+
 # References
 - [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 - [.gitignore not working](http://stackoverflow.com/questions/11451535/gitignore-not-working)
+- [How to modify existing, unpushed commits?](http://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits)
+- [Changing a commit message](https://help.github.com/articles/changing-a-commit-message/)
+- [How to undo last commit(s) in Git?](http://stackoverflow.com/questions/927358/how-to-undo-last-commits-in-git)
