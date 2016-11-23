@@ -157,8 +157,8 @@ git rebase -i HEAD~X
 << in each resulting commit file, type the new commit message >>
 ```
 
-Make sure you don't have any working copy changes staged before doing this or they will get committed too. 
-If so, to unstage any changes you've made since you can do `git reset`.
+> Make sure you don't have any working copy changes staged before doing this or they will get committed too. 
+> If so, to unstage any changes you've made since you can do `git reset`.
 
 ### Commit has been pushed online
 
@@ -170,8 +170,8 @@ git commit --amend -m "New commit message"
 git push --force example-branch
 ```
 
-Warning: force-pushing will overwrite the remote branch with the state of your local one.
-Warning: be cautious about amending commits that you have already shared with other people.
+> Warning: force-pushing will overwrite the remote branch with the state of your local one.  
+> Warning: be cautious about amending commits that you have already shared with other people.
 
 
 # References
