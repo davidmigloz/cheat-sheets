@@ -6,8 +6,9 @@
 - [Release branches](#release-branches)
 - [Hotfix branches](#hotfix-branches)
 - [Fix .gitignore](#fix-gitignore)
-- [Undo commit](#undu-commit)
+- [Undo commit](#undo-commit)
 - [Edit last commit message](#edit-last-commit-message)
+- [Checking out pull requests locally](#checking-out-pull-requests-locally)
 
 ![Git model](http://nvie.com/img/git-model@2x.png)
 
@@ -173,6 +174,14 @@ git push --force example-branch
 > Warning: force-pushing will overwrite the remote branch with the state of your local one.  
 > Warning: be cautious about amending commits that you have already shared with other people.
 
+## Checking out pull requests locally
+
+```bash
+git fetch origin pull/PR_ID/head:MYBRANCHNAME
+git checkout MYBRANCHNAME
+```
+
+It can also be setted in the `.git/config`: [instructions](https://gist.github.com/kennethreitz/3709868).
 
 # References
 - [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
@@ -180,3 +189,5 @@ git push --force example-branch
 - [How to modify existing, unpushed commits?](http://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits)
 - [Changing a commit message](https://help.github.com/articles/changing-a-commit-message/)
 - [How to undo last commit(s) in Git?](http://stackoverflow.com/questions/927358/how-to-undo-last-commits-in-git)
+- [Checking out pull requests locally](https://help.github.com/articles/checking-out-pull-requests-locally/)
+- [github clone from pull request?](http://stackoverflow.com/questions/14947789/github-clone-from-pull-request)
