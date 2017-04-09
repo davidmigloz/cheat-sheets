@@ -9,6 +9,7 @@
 - [Undo commit](#undo-commit)
 - [Edit last commit message](#edit-last-commit-message)
 - [Checking out pull requests locally](#checking-out-pull-requests-locally)
+- [Clone a specific Git branch](#clone-a-specific-git-branch)
 
 ![Git model](http://nvie.com/img/git-model@2x.png)
 
@@ -183,6 +184,12 @@ git checkout MYBRANCHNAME
 
 It can also be setted in the `.git/config`: [instructions](https://gist.github.com/kennethreitz/3709868).
 
+## Clone a specific Git branch
+
+```bash
+git clone -b gh-pages --single-branch https://github.com/davidmigloz/go-bees.git gobees-web
+```
+
 # References
 - [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 - [.gitignore not working](http://stackoverflow.com/questions/11451535/gitignore-not-working)
@@ -191,3 +198,4 @@ It can also be setted in the `.git/config`: [instructions](https://gist.github.c
 - [How to undo last commit(s) in Git?](http://stackoverflow.com/questions/927358/how-to-undo-last-commits-in-git)
 - [Checking out pull requests locally](https://help.github.com/articles/checking-out-pull-requests-locally/)
 - [github clone from pull request?](http://stackoverflow.com/questions/14947789/github-clone-from-pull-request)
+- [How to clone a specific Git branch?](http://stackoverflow.com/questions/1911109/how-to-clone-a-specific-git-branch)
